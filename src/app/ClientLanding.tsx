@@ -160,18 +160,15 @@ function CheckoutForm({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
   )
 }
 
-function SectionBadge({ children }: { children: React.ReactNode }) {
-  return (
+export function ClientLanding() {
+  const SectionBadge = ({ children }: { children: React.ReactNode }) => (
     <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300">
       {children}
     </span>
   )
-}
-
-export function ClientLanding() {
   return (
     <>
-      {/* ─── Hero ─── */}
+      {/* Hero */}
       <section className="px-4 pt-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl overflow-hidden rounded-[32px] bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 border border-white/[0.06]">
           <div className="grid gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-14">
@@ -254,7 +251,7 @@ export function ClientLanding() {
         </div>
       </section>
 
-      {/* ─── Why teams upgrade ─── */}
+      {/* Why teams upgrade */}
       <section className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="mb-2 text-center text-2xl font-bold text-zinc-900 sm:text-3xl">
@@ -301,7 +298,7 @@ export function ClientLanding() {
         </div>
       </section>
 
-      {/* ─── Pricing ─── */}
+      {/* Pricing */}
       <section id="pricing" className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="mb-2 text-center text-2xl font-bold text-zinc-900 sm:text-3xl">
@@ -422,7 +419,7 @@ export function ClientLanding() {
         </div>
       </section>
 
-      {/* ─── How it works ─── */}
+      {/* How it works */}
       <section className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-12 text-center text-2xl font-bold text-zinc-900 sm:text-3xl">
@@ -462,7 +459,7 @@ export function ClientLanding() {
         </div>
       </section>
 
-      {/* ─── Privacy-first build ─── */}
+      {/* Privacy-first build */}
       <section className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl overflow-hidden rounded-[32px] bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 border border-white/[0.06] p-10 lg:p-14">
           <h2 className="mb-2 text-center text-2xl font-bold text-white sm:text-3xl">
@@ -506,7 +503,7 @@ export function ClientLanding() {
         </div>
       </section>
 
-      {/* ─── FAQ ─── */}
+      {/* FAQ */}
       <section className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl">
           <h2 className="mb-10 text-center text-2xl font-bold text-zinc-900 sm:text-3xl">
@@ -548,7 +545,7 @@ export function ClientLanding() {
         </div>
       </section>
 
-      {/* ─── Final CTA ─── */}
+      {/* Final CTA */}
       <section className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl overflow-hidden rounded-[32px] bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 border border-white/[0.06] p-10 lg:p-14">
           <h2 className="mb-2 text-center text-2xl font-bold text-white sm:text-3xl">
@@ -564,7 +561,7 @@ export function ClientLanding() {
         </div>
       </section>
 
-      {/* ─── Footer ─── */}
+      {/* Footer */}
       <footer className="border-t border-zinc-200 px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="flex gap-6 text-sm text-zinc-500">
