@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { runAudit } from '@/lib/audit'
-import { validatePublicHttpUrl } from '@/lib/url-validation'
+import { runAudit } from '../../../../lib/audit'
+import { validatePublicHttpUrl } from '../../../../lib/url-validation'
 
 export const maxDuration = 120
 

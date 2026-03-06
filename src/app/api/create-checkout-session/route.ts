@@ -1,6 +1,6 @@
 import Stripe from 'stripe'
 import { NextRequest, NextResponse } from 'next/server'
-import { validatePublicHttpUrl } from '@/lib/url-validation'
+import { validatePublicHttpUrl } from '../../../lib/url-validation'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
 
