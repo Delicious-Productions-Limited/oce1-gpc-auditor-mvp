@@ -109,7 +109,7 @@ function CheckoutForm({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
                     : 'border-zinc-200 bg-white text-zinc-700 hover:border-zinc-300'
               }`}
             >
-              ${plan.price}
+              {"$"}{plan.price}
               <span className="block text-xs font-normal opacity-70">
                 /mo
               </span>
