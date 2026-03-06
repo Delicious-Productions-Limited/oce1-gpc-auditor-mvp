@@ -7,7 +7,7 @@ const PLANS = [
   { label: 'Starter', price: '49', priceId: '49' },
   { label: 'Pro', price: '99', priceId: '99' },
   { label: 'Agency', price: '199', priceId: '199' },
-] as const
+]
 
 function normalizeUrl(raw: string): string {
   if (!raw) return ''
@@ -167,7 +167,7 @@ export function ClientLanding() {
     </span>
   )
   return (
-    <>
+    <div className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 pb-20 pt-12 sm:gap-20 sm:pb-24 lg:gap-24">
       {/* Hero */}
       <section className="px-4 pt-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl overflow-hidden rounded-[32px] bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 border border-white/[0.06]">
@@ -580,6 +580,6 @@ export function ClientLanding() {
           </p>
         </div>
       </footer>
-    </>
+    </div>
   )
 }
