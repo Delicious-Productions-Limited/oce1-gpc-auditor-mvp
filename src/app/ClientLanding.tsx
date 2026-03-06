@@ -165,7 +165,8 @@ export function ClientLanding() {
     <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300">
       {children}
     </span>
-  )
+  );
+
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 pb-20 pt-12 sm:gap-20 sm:pb-24 lg:gap-24">
       {/* Hero */}
