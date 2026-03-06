@@ -2,7 +2,10 @@ import Stripe from 'stripe'
 import { NextRequest, NextResponse } from 'next/server'
 import { validatePublicHttpUrl } from '../../../lib/url-validation'
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
+function getStripe() {
+  if (!process.env.STRIPE_SECRET_KEY) throw new Error('STRIPE_SECRET_KEY not set')
+  return new Stripe(process.env.STRIPE_SECRET_KEY)
+}
 
 const PRICE_MAP: Record<string, string> = {
   '49': process.env.STRIPE_PRICE_STARTER || 'price_starter',
@@ -32,6 +35,7 @@ export async function POST(req: NextRequest) {
       )
     }
 
+    const stripe = getStripe()
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       line_items: [{ price: stripePriceId, quantity: 1 }],
