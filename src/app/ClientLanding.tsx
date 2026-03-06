@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, type FormEvent } from 'react'
 import Link from 'next/link'
 
 const PLANS = [
@@ -28,7 +28,7 @@ function CheckoutForm({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
 
   const normalized = useMemo(() => normalizeUrl(url), [url])
 
-  const handleSubmit = async (e: React.FormEvent, confirmLive = false) => {
+  const handleSubmit = async (e: FormEvent, confirmLive = false) => {
     e.preventDefault()
     setError('')
     setLoading(true)
