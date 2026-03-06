@@ -3,11 +3,11 @@ export default function Privacy() {
     <div className="min-h-screen bg-zinc-50 px-6 py-20 text-zinc-900">
       <div className="mx-auto max-w-2xl">
         <h1 className="text-3xl font-bold">Privacy Policy</h1>
-        <p className="mt-2 text-sm text-zinc-400">
+        <p className="mt-2 text-sm text-zinc-600">
           Last updated: March 2026
         </p>
 
-        <div className="mt-8 space-y-6 text-sm leading-relaxed text-zinc-600">
+        <div className="mt-8 space-y-6 text-base leading-relaxed text-zinc-800 sm:text-sm">
           <section>
             <h2 className="mb-2 text-lg font-semibold text-zinc-900">
               1. Data We Collect
