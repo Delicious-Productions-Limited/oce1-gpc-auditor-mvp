@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import Link from 'next/link'
 
 const PLANS = [
@@ -161,12 +161,6 @@ function CheckoutForm({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
 }
 
 export function ClientLanding() {
-  const SectionBadge = ({ children }: { children: React.ReactNode }) => (
-    <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300">
-      {children}
-    </span>
-  );
-
   return (
     <div className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 pb-20 pt-12 sm:gap-20 sm:pb-24 lg:gap-24">
       {/* Hero */}
@@ -175,7 +169,7 @@ export function ClientLanding() {
           <div className="grid gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-14">
             {/* Left */}
             <div className="flex flex-col justify-center">
-              <SectionBadge>GPC Auditor · v1.3</SectionBadge>
+              <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300">GPC Auditor · v1.3</span>
               <h1 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
                 Ship privacy proof before regulators or partners ask for it.
               </h1>
