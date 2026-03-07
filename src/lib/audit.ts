@@ -1,5 +1,21 @@
-import puppeteer from 'puppeteer-core'
-import chromium from '@sparticuz/chromium'
+function ensureChromiumRuntimeEnv() {
+  // @sparticuz/chromium only unpacks AL2023 shared libs when it detects
+  // an AWS Lambda Node 20+/22+ runtime. Vercel Node runtimes are Lambda-based
+  // but do not always expose AWS_EXECUTION_ENV, which can cause missing
+  // libnss3/libatk shared library errors at launch.
+  if (process.env.VERCEL && !process.env.AWS_EXECUTION_ENV) {
+    process.env.AWS_EXECUTION_ENV = 'AWS_Lambda_nodejs22.x'
+  }
+}
+
+async function getChromiumDeps() {
+  ensureChromiumRuntimeEnv()
+  const [{ default: puppeteer }, { default: chromium }] = await Promise.all([
+    import('puppeteer-core'),
+    import('@sparticuz/chromium'),
+  ])
+  return { puppeteer, chromium }
+}
 
 const TRACKER_DOMAINS = [
   'google-analytics.com',
@@ -35,6 +51,8 @@ async function runOnce(
   gpc: boolean,
   attempt = 1
 ): Promise<AuditRun> {
+  const { puppeteer, chromium } = await getChromiumDeps()
+
   const args = [
     ...chromium.args,
     '--no-sandbox',
