@@ -39,8 +39,8 @@ export async function POST(req: NextRequest) {
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       line_items: [{ price: stripePriceId, quantity: 1 }],
-      success_url: `${process.env.NEXT_PUBLIC_URL || 'https://gpc.growthauditkit.com'}/results?session_id={CHECKOUT_SESSION_ID}&url=${encodeURIComponent(validated.url)}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_URL || 'https://gpc.growthauditkit.com'}/?canceled=1`,
+      success_url: `${process.env.NEXT_PUBLIC_URL || 'https://growthauditkit.com/gpc-auditor'}/results?session_id={CHECKOUT_SESSION_ID}&url=${encodeURIComponent(validated.url)}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_URL || 'https://growthauditkit.com/gpc-auditor'}/?canceled=1`,
       metadata: { audit_url: validated.url },
     })
 
